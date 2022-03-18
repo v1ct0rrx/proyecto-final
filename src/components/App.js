@@ -15,11 +15,10 @@ class App extends Component {
     }
   }
 
-  handleItemDeleted(value) {
-    const index = this.state.contacts.indexOf(value, 0);
-    this.state.contacts.splice(index, 1);
+  handleItemDeleted = (value, row) => {
+    const index = this.state.contacts.indexOf(row, 0);
     this.setState({
-      contacts: this.state.contacts
+      contacts: this.state.contacts.splice(row, 1)
     });
   }
 
@@ -81,7 +80,7 @@ class App extends Component {
       dataIndex: '',
       key: 'operations',
       className: 'columna',
-      render: (value) => <Boton className='button-eliminar' texto={'Eliminar'} handleClick={() => this.handleClickEliminar(value)} />,
+      render: (value, row) => <Boton className='button-eliminar' texto={'Eliminar'} handleClick={() => this.handleItemDeleted(value, row)} />,
     }
   ];
 
