@@ -34,7 +34,9 @@ class App extends Component {
 
   render() {
     return (
-      <Tabla columns={this.columns} data={this.state.contacts} />
+      <div>
+        <Tabla columns={this.columns} data={this.state.contacts} />
+      </div>
     )
   }
 
@@ -72,14 +74,14 @@ class App extends Component {
       dataIndex: '',
       key: 'operations',
       className: 'columna',
-      render: (value) => <Boton texto={'Editar'} handleClick={() => this.handleClickEditar(value)} />,
+      render: (value) => <Boton className='button-editar' texto={'Editar'} handleClick={() => this.handleClickEditar(value)} />,
     },
     {
       title: 'Eliminar',
       dataIndex: '',
       key: 'operations',
       className: 'columna',
-      render: (value) => <Boton texto={'Eliminar'} handleClick={() => this.handleClickEliminar(value)} />,
+      render: (value) => <Boton className='button-eliminar' texto={'Eliminar'} handleClick={() => this.handleClickEliminar(value)} />,
     }
   ];
 
@@ -89,8 +91,6 @@ class App extends Component {
 
   handleClickEliminar = (value) => {
     alert('Eliminando :: ' + value.id);
-    /*const index = this.state.contacts.indexOf(value, 0);
-    this.state.contacts.splice(index, 1);*/
   }
 
 }

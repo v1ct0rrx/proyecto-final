@@ -13,9 +13,4 @@ Tabla.propsType = {
     data: PropTypes.array.isRequired
 }
 
-const actualizarInfo = () =>{
-    this.Tabla.data = [];
-};
-
-
 export default Tabla;

@@ -1,9 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import '../css/boton.css';
 
 const Boton = (props) =>{
     return (
-        <button onClick={props.handleClick}>
+        <button class={props.className} onClick={props.handleClick}>
            {props.texto}
         </button>
      );
@@ -11,7 +12,8 @@ const Boton = (props) =>{
 
 Boton.propTypes = {
     texto: PropTypes.string.isRequired,
-    handleClick: PropTypes.func.isRequired
+    handleClick: PropTypes.func.isRequired,
+    className: PropTypes.string.isRequired
  }
  
  export default Boton;
